@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fino Cuero · Marroquinería</title>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/webp" href="img/logo.webp" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* Fotos de producto: se ven completas, sin recortes, con cualquier tamaño de imagen */
+      .producto-img { background: #fff; }
+      .producto-img img { object-fit: contain; padding: 4%; }
+      .carta-img.foto { padding: 0; aspect-ratio: 1 / 1; background: #fff; position: relative; }
+      .gal-img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    </style>
+    <script>
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem("tema"); } catch (e) {}
+        var oscuro = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.setAttribute("data-theme", t || (oscuro ? "dark" : "light"));
+      })();
+    </script>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner max-w-7xl mx-auto px-6">
+        <div class="nav-logo"><img src="img/logo.webp" alt="Logo de Fino Cuero Marroquinería"><span>Fino Cuero</span></div>
+        <div class="nav-links">
+          <a id="nav-carteras" href="#">Carteras</a>
+          <a id="nav-calzado" href="#">Calzado</a>
+          <a id="nav-mas" href="#">Más</a>
+        </div>
+        <div class="nav-actions">
+          <div class="nav-search">
+            <span class="material-symbols-outlined nav-search-icon">search</span>
+            <input placeholder="Buscar productos..." type="text" />
+          </div>
+          <button class="nav-cart-btn" aria-label="Carrito">
+            <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+          </button>
+          <button class="theme-toggle-btn" id="theme-toggle" aria-label="Cambiar tema claro/oscuro" aria-pressed="false">
+            <span class="material-symbols-outlined" id="theme-toggle-icon">dark_mode</span>
+          </button>
+          <button class="nav-hamburger" id="menu-mobile-toggle" aria-label="Abrir menú" aria-expanded="false"><span class="material-symbols-outlined">menu</span></button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-search">
+          <span class="material-symbols-outlined nav-search-icon">search</span>
+          <input placeholder="Buscar productos..." type="text" id="mobile-search-input" />
+        </div>
+        <a id="mobile-nav-carteras" href="#">Carteras</a>
+        <a id="mobile-nav-calzado" href="#">Calzado</a>
+        <a id="mobile-nav-mas" href="#">Más</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="hero-bg"><div class="hero-gradient"></div></div>
+        <div class="hero-content max-w-7xl mx-auto px-6">
+          <div class="hero-grid">
+            <div class="hero-card">
+              <h1>Cuero de verdad, con <em>mucha onda</em></h1>
+              <p>Carteras, botas, zapatos, cinturones y mochilas para mujer. Todo en cuero vacuno, cortado y cosido a mano en Villa Ballester.</p>
+              <div class="hero-btns">
+                <button id="btn-explorar">Explorar colección</button>
+                <button id="btn-color">Visitá el local</button>
+              </div>
+            </div>
+            <div class="hero-emblem"><img src="img/logo.webp" alt="Emblema de Fino Cuero Marroquinería"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>CUERO VACUNO ✦ HECHO A MANO ✦ COSTURAS REFORZADAS ✦ VILLA BALLESTER ✦ CUERO VACUNO ✦ HECHO A MANO ✦ COSTURAS REFORZADAS ✦ VILLA BALLESTER ✦ CUERO VACUNO ✦ HECHO A MANO ✦ COSTURAS REFORZADAS ✦ VILLA BALLESTER ✦ CUERO VACUNO ✦ HECHO A MANO ✦ COSTURAS REFORZADAS ✦ VILLA BALLESTER ✦ </span><span>CUERO VACUNO ✦ HECHO A MANO ✦ COSTURAS REFORZADAS ✦ VILLA BALLESTER ✦ CUERO VACUNO ✦ HECHO A MANO ✦ COSTURAS REFORZADAS ✦ VILLA BALLESTER ✦ CUERO VACUNO ✦ HECHO A MANO ✦ COSTURAS REFORZADAS ✦ VILLA BALLESTER ✦ CUERO VACUNO ✦ HECHO A MANO ✦ COSTURAS REFORZADAS ✦ VILLA BALLESTER ✦ </span></div></div>
+
+    <section class="features">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="features-grid">
+          <div class="feature-item"><div class="feature-icon"><span class="material-symbols-outlined">workspace_premium</span></div><h3>Cuero vacuno</h3><p>Curtido de calidad que mejora con cada uso.</p></div>
+          <div class="feature-item"><div class="feature-icon"><span class="material-symbols-outlined">content_cut</span></div><h3>Hecho a mano</h3><p>Corte, costura y terminación en nuestro taller.</p></div>
+          <div class="feature-item"><div class="feature-icon"><span class="material-symbols-outlined">verified</span></div><h3>Costuras reforzadas</h3><p>Hilo encerado y remaches en cada punto de tensión.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="catalogo" class="catalogo">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="catalogo-header">
+          <div>
+            <span class="catalogo-eyebrow">Catálogo premium</span>
+            <h2>Productos destacados</h2>
+          </div>
+          <div class="filtros">
+            <span class="filtro-btn filtro-activo" data-filtro="todo">Todo</span>
+            <span class="filtro-btn" data-filtro="carteras">Carteras</span>
+            <span class="filtro-btn" data-filtro="calzado">Calzado</span>
+            <span class="filtro-btn" data-filtro="cinturones">Cinturones</span>
+            <span class="filtro-btn" data-filtro="mochilas">Mochilas</span>
+          </div>
+        </div>
+        <div class="productos-grid">
+          <div class="producto-card" data-categoria="carteras" data-etiqueta="Carteras">
+            <div class="producto-img"><img src="img/aurora-1.webp" alt="Cartera Aurora" loading="lazy"><span class="producto-badge">Popular</span></div>
+            <div class="producto-info">
+              <h4 class="producto-nombre">Cartera Aurora</h4>
+              <p class="producto-desc">Cartera de mano con solapa y cierre magnético. Interior forrado con un bolsillo con cierre y dos organizadores.</p>
+              <div class="producto-footer">
+                <span class="producto-precio">$89.900</span>
+                <button class="btn-carrito" aria-label="Agregar Cartera Aurora al carrito"><span class="material-symbols-outlined">shopping_cart</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="producto-card" data-categoria="carteras" data-etiqueta="Carteras">
+            <div class="producto-img"><img src="img/bandolera-mila-1.webp" alt="Bandolera Mila" loading="lazy"></div>
+            <div class="producto-info">
+              <h4 class="producto-nombre">Bandolera Mila</h4>
+              <p class="producto-desc">Bandolera compacta con correa regulable. Entra el celular, la billetera y las llaves sin perder la forma.</p>
+              <div class="producto-footer">
+                <span class="producto-precio">$72.500</span>
+                <button class="btn-carrito" aria-label="Agregar Bandolera Mila al carrito"><span class="material-symbols-outlined">shopping_cart</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="producto-card" data-categoria="calzado" data-etiqueta="Botas">
+            <div class="producto-img"><img src="img/bota-alba-1.webp" alt="Bota Alba" loading="lazy"><span class="producto-badge">Nuevo</span></div>
+            <div class="producto-info">
+              <h4 class="producto-nombre">Bota Alba</h4>
+              <p class="producto-desc">Bota media caña con cierre lateral y suela antideslizante. Cuero flor que se ablanda con los primeros usos.</p>
+              <div class="producto-footer">
+                <span class="producto-precio">$149.900</span>
+                <button class="btn-carrito" aria-label="Agregar Bota Alba al carrito"><span class="material-symbols-outlined">shopping_cart</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="producto-card" data-categoria="calzado" data-etiqueta="Botas">
+            <div class="producto-img"><img src="img/bota-pampa-1.webp" alt="Bota Pampa" loading="lazy"></div>
+            <div class="producto-info">
+              <h4 class="producto-nombre">Bota Pampa</h4>
+              <p class="producto-desc">Bota de caña alta con taco bajo y costura a la vista. Pensada para caminar todo el día.</p>
+              <div class="producto-footer">
+                <span class="producto-precio">$164.500</span>
+                <button class="btn-carrito" aria-label="Agregar Bota Pampa al carrito"><span class="material-symbols-outlined">shopping_cart</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="producto-card" data-categoria="calzado" data-etiqueta="Zapatos">
+            <div class="producto-img"><img src="img/zapatos-lola-1.webp" alt="Zapato Lola" loading="lazy"><span class="producto-badge">Popular</span></div>
+            <div class="producto-info">
+              <h4 class="producto-nombre">Zapato Lola</h4>
+              <p class="producto-desc">Zapato de vestir con taco de 6 cm y plantilla acolchada. Forro interior de cuero para mayor comodidad.</p>
+              <div class="producto-footer">
+                <span class="producto-precio">$98.700</span>
+                <button class="btn-carrito" aria-label="Agregar Zapato Lola al carrito"><span class="material-symbols-outlined">shopping_cart</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="producto-card" data-categoria="calzado" data-etiqueta="Zapatos">
+            <div class="producto-img"><img src="img/mocasin-vera-1.webp" alt="Mocasín Vera" loading="lazy"></div>
+            <div class="producto-info">
+              <h4 class="producto-nombre">Mocasín Vera</h4>
+              <p class="producto-desc">Mocasín liviano de planta flexible. Ideal para la oficina y para el fin de semana.</p>
+              <div class="producto-footer">
+                <span class="producto-precio">$86.300</span>
+                <button class="btn-carrito" aria-label="Agregar Mocasín Vera al carrito"><span class="material-symbols-outlined">shopping_cart</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="producto-card" data-categoria="cinturones" data-etiqueta="Cinturones">
+            <div class="producto-img"><img src="img/cinturon-sierra.webp" alt="Cinturón Sierra" loading="lazy"></div>
+            <div class="producto-info">
+              <h4 class="producto-nombre">Cinturón Sierra</h4>
+              <p class="producto-desc">Cinturón de 3 cm de ancho con hebilla metálica y cinco orificios. Cuero vacuno de una sola pieza.</p>
+              <div class="producto-footer">
+                <span class="producto-precio">$34.900</span>
+                <button class="btn-carrito" aria-label="Agregar Cinturón Sierra al carrito"><span class="material-symbols-outlined">shopping_cart</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="producto-card" data-categoria="cinturones" data-etiqueta="Cinturones">
+            <div class="producto-img"><img src="img/cinturon-trenza.webp" alt="Cinturón Trenza" loading="lazy"><span class="producto-badge">Nuevo</span></div>
+            <div class="producto-info">
+              <h4 class="producto-nombre">Cinturón Trenza</h4>
+              <p class="producto-desc">Cinturón trenzado a mano, elástico y resistente. Se ajusta sin perforaciones.</p>
+              <div class="producto-footer">
+                <span class="producto-precio">$39.800</span>
+                <button class="btn-carrito" aria-label="Agregar Cinturón Trenza al carrito"><span class="material-symbols-outlined">shopping_cart</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="producto-card" data-categoria="mochilas" data-etiqueta="Mochilas">
+            <div class="producto-img"><img src="img/mochila-delta-1.webp" alt="Mochila Delta" loading="lazy"></div>
+            <div class="producto-info">
+              <h4 class="producto-nombre">Mochila Delta</h4>
+              <p class="producto-desc">Mochila con compartimiento para notebook de 14 pulgadas, bolsillo frontal y bretel acolchado.</p>
+              <div class="producto-footer">
+                <span class="producto-precio">$119.000</span>
+                <button class="btn-carrito" aria-label="Agregar Mochila Delta al carrito"><span class="material-symbols-outlined">shopping_cart</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="producto-card" data-categoria="mochilas" data-etiqueta="Mochilas">
+            <div class="producto-img"><img src="img/mochila-urbana-1.webp" alt="Mochila Urbana" loading="lazy"><span class="producto-badge">Popular</span></div>
+            <div class="producto-info">
+              <h4 class="producto-nombre">Mochila Urbana</h4>
+              <p class="producto-desc">Mochila liviana con cierre superior y bolsillo oculto antirrobo. Se lleva también como bolso de mano.</p>
+              <div class="producto-footer">
+                <span class="producto-precio">$104.500</span>
+                <button class="btn-carrito" aria-label="Agregar Mochila Urbana al carrito"><span class="material-symbols-outlined">shopping_cart</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros" class="nosotros">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="nosotros-grid">
+          <div>
+            <span class="catalogo-eyebrow">Quiénes somos</span>
+            <h2>Una pyme familiar con el cuero en las venas</h2>
+            <p>En Fino Cuero hacemos pocas piezas por vez para cuidar cada costura y cada borde. Trabajamos solo con cuero vacuno, elegido por su resistencia y por cómo se adapta a quien lo usa.</p>
+          </div>
+          <div class="local">
+            <h3>Visitá nuestro local</h3>
+            <p><strong>Av. Ricardo Balbín 2450, Villa Ballester</strong></p>
+            <p>Lunes a sábado de 10 a 13 h y de 16 a 20 h</p>
+            <p>Tel. (011) 4767-0000</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-grid max-w-7xl mx-auto px-6">
+        <div class="footer-brand">
+          <img src="img/logo.webp" alt="">
+          <p>© 2026 Fino Cuero.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Compañía</h4>
+          <a href="#nosotros">Sobre nosotros</a>
+          <a href="#catalogo">Productos</a>
+          <a href="#nosotros">Nuestro local</a>
+        </div>
+        <div class="footer-col">
+          <h4>Seguinos</h4>
+          <div class="redes">
+            <a class="red-doom" href="#" aria-label="Facebook de Fino Cuero" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a class="red-doom" href="#" aria-label="Instagram de Fino Cuero" title="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a>
+            <a class="red-doom" href="#" aria-label="YouTube de Fino Cuero" title="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg></a>
+          </div>
+          <p class="pista">Tocá cualquiera… hay sorpresa 👾</p>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p>Suscribite para recibir novedades y ofertas exclusivas.</p>
+          <div class="newsletter-form">
+            <input placeholder="Tu email" type="email" aria-label="Tu email" />
+            <button aria-label="Suscribirme"><span class="material-symbols-outlined">send</span></button>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a class="whatsapp-btn" href="https://wa.me/1234567890" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+      <svg fill="currentColor" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.481 8.403 0 6.556-5.332 11.891-11.891 11.891-2.096 0-4.113-.549-5.903-1.591l-6.09 1.599zm6.314-4.136l.356.212c1.482.882 3.193 1.348 4.954 1.348 5.42 0 9.829-4.41 9.829-9.829 0-2.628-1.023-5.097-2.881-6.958-1.856-1.859-4.325-2.883-6.948-2.883-5.42 0-9.829 4.409-9.829 9.829 0 1.905.539 3.766 1.56 5.405l.233.373-.996 3.636 3.722-.976zm10.513-5.712c-.285-.143-1.688-.833-1.948-.928-.261-.095-.451-.143-.64.143-.19.285-.736.928-.903 1.117-.166.19-.332.214-.617.071-.285-.143-1.204-.444-2.293-1.415-.848-.756-1.42-1.689-1.586-1.974-.166-.285-.018-.439.124-.581.128-.127.285-.333.428-.499.143-.166.19-.285.285-.476.095-.19.048-.357-.024-.5-.071-.143-.64-1.545-.878-2.116-.232-.562-.467-.485-.64-.494-.166-.009-.356-.01-.546-.01-.19 0-.5.071-.76.357-.261.285-.998.975-.998 2.378 0 1.403 1.022 2.758 1.164 2.948.143.19 2.012 3.073 4.874 4.312.68.295 1.21.47 1.623.601.683.216 1.305.186 1.796.113.547-.082 1.688-.69 1.925-1.356.237-.666.237-1.237.166-1.356-.07-.119-.261-.19-.546-.333z"/>
+      </svg>
+    </a>
+
+    <script src="script.js"></script>
+    <script>
+      // Carta de producto con foto (sobrescribe la función de script.js)
+      function abrirCarta(card) {
+        const nombre = card.querySelector(".producto-nombre").innerText;
+        const desc = card.querySelector(".producto-desc").innerText;
+        const precio = card.querySelector(".producto-precio").innerText;
+        const cat = card.dataset.etiqueta || "";
+        const foto = card.querySelector(".producto-img img");
+        const color = card.querySelector(".producto-img").style.getPropertyValue("--c");
+        const media = foto
+          ? `<div class="carta-img foto"><img class="gal-img" src="${foto.getAttribute("src")}" alt="${nombre}"></div>`
+          : `<div class="carta-img">${card.querySelector(".producto-img svg").outerHTML}</div>`;
+        carta.innerHTML = `
+          <div class="carta-box"${color ? ` style="--c:${color}"` : ""}>
+            ${media}
+            <div class="carta-txt">
+              <small>${cat} · Cuero vacuno</small>
+              <h3>${nombre}</h3>
+              <p>${desc}</p>
+              <div class="carta-row">
+                <strong>${precio}</strong>
+                <div class="carta-btns">
+                  <button class="carta-add">Agregar 🛒</button>
+                  <button class="carta-x">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>`;
+        carta.querySelector(".carta-x").onclick = () => carta.close();
+        carta.querySelector(".carta-add").onclick = () => { card.querySelector(".btn-carrito").click(); carta.close(); };
+        carta.showModal();
+      }
+    </script>
+  </body>
+</html>
